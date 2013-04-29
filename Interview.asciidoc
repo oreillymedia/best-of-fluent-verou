@@ -1,0 +1,8 @@
+== Interview with Lea Verou, Fluent 2012
+
+video::http://www.youtube.com/embed/6E_VXIgPanE[height='300', width='100%']
+
+.Lea Verou Interviewed at Fluent 2012
+****
+Lea talks to Mac Slocum about the importance of having regex in your programming tool belt.
+****
