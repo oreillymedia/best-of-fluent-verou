@@ -1,0 +1,8 @@
+== Turning to the Client Side
+
+video::http://www.youtube.com/embed/0T57Ivn5-Pw[height='300', width='100%']
+
+.Keynote Presentation from Fluent, 2012
+****
+Lea Verou, Web designer, developer, and independent web evangelist.
+****
