@@ -1,0 +1,10 @@
+== Demystifying Regular Expressions
+
+video::http://www.youtube.com/embed/6E_VXIgPanE[height='300', width='100%']
+
+.Demystifying Regular Expressions
+****
+Like many developers, you might be familiar with the power of regular expressions, but anything beyond the basics scares you. Fear no more, young padawan! In this talk, we'll start with the basics and progressively enhance your knowledge until you're coding regular expressions like a champ. Everything will be demonstrated live with visual examples that ensure maximum comprehension.
+
+Follow along with Lea's http://leaverou.github.io/regexplained/[RegEx Playground].
+****
