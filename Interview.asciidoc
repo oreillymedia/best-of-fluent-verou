@@ -9,6 +9,8 @@ Lea talks to Mac Slocum about the importance of having regex in your programming
 
 === Video Transcript
 
+*Mac Slocum:* [0:01] Why are regular expressions important?
+
 *Lea Verou:* [0:03] Regular expressions can greatly simplify lots of common code
 sequences. In many cases, you can condense 100 lines of code into
 single-line regular expressions.
