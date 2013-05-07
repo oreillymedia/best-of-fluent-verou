@@ -165,13 +165,12 @@ going to be. I'm really looking forward to that.
 from Twitter, they will have to support it eventually if lots of
 you request it.
 
-I don't think I really need to explain the benefits that CORS have
+I don't think I really need to explain the benefits that CORS has
 over JSONP. It's way more powerful. It basically allows you to do
 all the range of different HTTP requests. JSONP is just a hack that
 basically only allows GET requests. With CORS, you can do any kind
 of request, POST request, PUT request. You can send different HTTP
-headers, read HTTP headers. It has much better [indecipherable 09:
-[8:41] 07] handling, basically anything you can do with
+headers, read HTTP headers. It has much better error handling, basically anything you can do with
 XMLHTTPRequest.
 
 [9:13] An interesting fact that I discovered when I launched
