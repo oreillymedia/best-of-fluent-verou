@@ -137,7 +137,7 @@ basically operates in exactly the same way.
 
 CORS is supported by pretty much every browser. The main exception
 is Opera, but it will support it in Opera 12. You can already test
-it in the [indecipherable 07: [7:20] 31] builds.
+it in the nightly builds.
 
 [7:33] The biggest caveat, of course, is that APIs need to allow it
 explicitly by using an Access-Control-Allow-Origin header to define
