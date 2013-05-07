@@ -27,7 +27,7 @@ of this approach is its basically infinite scalability.
 Every line of code you write on the server might end up being
 executed hundreds or even thousands of times if your application
 becomes successful or even if you're lucky enough to get
-[indecipherable 01: [1:02] 12] . Everything you write on the client
+Slashdotted. Everything you write on the client
 always deals with one machine. It might not be the best machine you
 can imagine. It might be an old computer that's kind of slow, but
 it's still probably better than a slice of your server.
