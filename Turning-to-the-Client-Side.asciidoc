@@ -9,8 +9,7 @@ Lea Verou, Web designer, developer, and independent web evangelist.
 
 === Video Transcript
 
-probably noticed, my name is Lea Verou. If my name sounds vaguely
-familiar, it's probably due to one of my open source tools. All of
+[0:02] Hello everyone. It's great to be here today. As you've probably noticed, my name is Lea Verou. If my name sounds vaguely familiar, it's probably due to one of my open source tools. All of
 them have something in common. They try to use as little of the
 server as possible.
 
