@@ -209,8 +209,7 @@ you can afford it.
 
 Another case is things that really need to be centralized. For
 example, when Twitter launched their new interface, every time you
-used a different client, you had to mark your [indecipherable 11:
-[11:09] 20] messages as read again, because they, it seems that the
+used a different client, you had to mark your direct messages as read again, because they, it seems that the
 read state is stored on the client side. That's not really, that's
 not good. It pisses off so many people.
 
