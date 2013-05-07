@@ -6,3 +6,68 @@ video::http://www.youtube.com/embed/6E_VXIgPanE[height='300', width='100%']
 ****
 Lea talks to Mac Slocum about the importance of having regex in your programming tool belt.
 ****
+
+=== Video Transcript
+
+*Lea Verou:* [0:03] Regular expressions can greatly simplify lots of common code
+sequences. In many cases, you can condense 100 lines of code into
+single-line regular expressions.
+
+[0:14] Regular expressions is just a language that describes a set
+of strings. Every time you need to test if a string matches a
+certain pattern, for example, is something an email address? Or if
+you want to extract part of a string, like extracting, for example,
+all the words in a text. Or counting them, or validating data.
+
+[0:35] Regular expressions can greatly help in all of these cases,
+and they're usually much more performant than having 100 lines of
+string manipulation functions.
+
+*Slocum:* [0:43] Is it one of those skills that falls through the cracks? One
+of those things that it's worth doubling back to make sure that
+you've got that in your tool set?
+
+*Verou:* [0:51] I think many developers don't focus enough on regular
+expressions, because they're considered one of the least exciting
+aspects of programming. They tend to get excited about new APIs,
+cool stuff, new frameworks, and libraries. That's something that's
+doesn't have lots of...It's not considered cool.
+
+*Slocum:* [1:12] Switching gears a little bit, moving over to CSS a bit, do
+you think we'll get to a point where we don't have proprietary CSS
+elements anymore, or is that just wishful thinking?
+
+*Verou:* [1:24] That depends on how we treat the ones we have today. If we
+keep developing for proprietary features of certain browsers, the
+same way people develop for WebKit-only stuff today, then yes,
+companies will still do it, because it helps them advance in the
+browser market.
+
+[1:41] That basically hurts web developers. Remember what happened
+when we got a very cool browser, with many cool, shiny, proprietary
+features? Web developers got really excited about that browser and
+its proprietary features, they started using them, and then we got
+locked in that browser, and we got a decade of IE6. IE6 was a great
+browser when it was released.
+
+*Slocum:* [2:05] 10 years later, not so much. Last question for you. What is
+your process for experimenting with a new feature? What's the
+criteria that it has to meet, for you?
+
+*Verou:* [2:16] I guess the criteria is that I usually want the feature to
+have at least one implementation. It's really hard to experiment
+with something that's just a spec, and doesn't have any
+implementations. Quite often, there are specs that never get
+implemented. There's no interest from browsers, so they never
+implement them, even though they exist for years.
+For example, there used to be a spec that defined how we can have
+multiple pseudo-elements. Multiple :before pseudo-elements
+or :after pseudo-elements, or multiple ::outside pseudo-elements.
+It was really exciting. Browsers didn't care, they didn't implement
+it. We had to actually drop the features in that spec, because when
+there is no interest the specs changes.
+
+*Slocum:* [3:03] Thanks so much for being with us. Appreciate you taking the
+time.
+
+*Verou:* [3:06] Thank you.

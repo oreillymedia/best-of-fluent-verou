@@ -6,3 +6,219 @@ video::http://www.youtube.com/embed/0T57Ivn5-Pw[height='300', width='100%']
 ****
 Lea Verou, Web designer, developer, and independent web evangelist.
 ****
+
+=== Video Transcript
+
+probably noticed, my name is Lea Verou. If my name sounds vaguely
+familiar, it's probably due to one of my open source tools. All of
+them have something in common. They try to use as little of the
+server as possible.
+
+[0:20] Everything that can be done on the client, is done on the
+client. That's often referred to as thin server architecture.
+Basically the server is used to store files and data and keep both
+of them safe. The client is used for pretty much everything else.
+
+[0:37] Dabblet is a prime example of this, and it's what inspired
+this presentation. It's a social web application for testing and
+sharing snippets of CSS. It uses way more client and way less
+server than most people imagine. The biggest reason I'm a proponent
+of this approach is its basically infinite scalability.
+
+Every line of code you write on the server might end up being
+executed hundreds or even thousands of times if your application
+becomes successful or even if you're lucky enough to get
+[indecipherable 01: [1:02] 12] . Everything you write on the client
+always deals with one machine. It might not be the best machine you
+can imagine. It might be an old computer that's kind of slow, but
+it's still probably better than a slice of your server.
+
+[1:26] It also helps reduce server costs quite a lot, because
+basically the server is just used to serve files. So server load
+doesn't increase, which is the prime reason of moving to a
+dedicated server and then to more servers. Especially for me, since
+most of them are side projects, my budget for them is quite
+limited. I guess that's a problem that many start-ups face as well.
+
+[1:49] Every time I have this discussion with someone or a group of
+people, some know-it-all always points out something like, "But
+servers these days are cheap, right?" Not really. Bandwidth is
+cheap. Storage is cheap. CPU cycles are very rarely cheap, and
+database administrators and performance engineers and all these
+people that help big companies that have tons of servers -- these
+are never cheap. You can't usually afford these on a side project
+or on a start-up.
+
+[2:23] Another added benefit of this approach is that it helps a
+much more responsive UI, a much more snappy user experience. Less
+round trips to the server means less page reloads and less dreaded
+loading spinners like the ones I have in the background to give you
+nightmares.
+
+[2:41] However, thin server architecture wasn't enough. I wanted to
+get rid of the data component on the server as well and move all
+the things to the client. Is that even possible? My first naïve
+thought was to use local storage or IndexedDB to store the data on
+the client, which works well for some applications.
+
+[3:04] For example in cubic-bezier.com it uses local storage to
+store the curves in your library and you can import and export them
+as JSON. If I worked a bit more on that, you could probably
+download a JSON file, which would be easier. But still, using files
+for sharing is so '90s.
+
+[3:25] People want to use URLs for sharing and that doesn't really
+help. Another thought was using URIs as storage. This is helpful in
+cases where your data is tiny. For example, in css.coloratum.com,
+the data is just css color. Or in cubic-bezier.com, the data you
+usually want to share is not your entire library.
+
+[3:47] It's just a cubic Bezier curve, so you can use that in the
+URL, and that kind of doubles as a feature as well, because you can
+predict what the URL is going to be just by knowing your data. For
+example, you want to share a color with someone and show them how
+that color looks on their screen, you can figure out the URL
+without even using the application.
+
+[4:08] TweetPlus is an application for posting long tweets. It's
+kind of like TweetLonger, but it's entirely client-side. It has
+basically no server-side component. The server is just used for
+serving files. The way it works is by encoding the entire log suite
+in the URL, which might sound unwieldy and counterintuitive. Who
+wants to deal with huge URLs like this?
+
+[4:32] It makes more sense if you realize that when you post a URL
+on Twitter, it wraps it on its own URL shortener. Basically, the
+entire, huge three-plus URL that might be up to 2,000 characters
+becomes a small, 20-character t.co URL, which you can add in every
+tweet, in any tweet you want.
+
+[4:55] Basically, it's using Twitter to store your long tweet,
+which creates a single point of failure. If Twitter goes down, you
+lose your data, but you don't depend on an external service. If
+TweetLonger, at some point, decides that their business model is
+not really good and they decide to close down, poof goes your long
+tweets.
+
+[5:16] I think to keep in mind when using this approach is A, if
+history API's available, use history API because setting the hash
+might cause page jumps. Also, most importantly, don't fire it too
+frequently.
+
+[5:30] Good candidates for this are events like on Blur or an
+unload, on mouseout. Bad candidates for this is events that fire
+all the time, like on mousemove or on keyop or an input because
+that means that if someone uses your application for five minutes,
+you've completely littered the browser history. The browser history
+basically consists now of points of states, intermediate states on
+your application that they don't really need to refer to.
+
+[6:00] However, when I create a Dabblet, it was clear that that
+approach was not going to be good, neither of these approaches. I
+couldn't use local storage or index DB and store the snippets on
+the client because then people wouldn't then be able to share them
+easily. Obviously, I can use huge URLs that contain the entire CSS
+and HTML code. I needed to come up with something else.
+
+[6:25] At some point, I had a lightbulb moment. I decided to use
+the GitHub gist API. I know you're probably thinking, but come on,
+JSONp is not really the best way to deal with this, so you need to
+use the server as a proxy and that kind of defeats the purpose.
+
+[6:44] Actually, these days, you can use third-party APIs from the
+client directly with no server interaction by using a technology
+called Cross-Origin Resource Sharing or CORS. This basically means
+that for APIs that allow it, you can use XMLHTTPRequest normally,
+just like you would otherwise.
+
+[7:06] You need to work around limitation 98 and 9. It doesn't
+support CORS in the standard form. It supports it in a different
+object, X-Domain Request. That's just a small difference. It
+basically operates in exactly the same way.
+
+CORS is supported by pretty much every browser. The main exception
+is Opera, but it will support it in Opera 12. You can already test
+it in the [indecipherable 07: [7:20] 31] builds.
+
+[7:33] The biggest caveat, of course, is that APIs need to allow it
+explicitly by using an Access-Control-Allow-Origin header to define
+with domains can access it. Some of them are more reluctant than
+others.
+
+[7:46] Some nice APIs that allow it are these. Many Google APIs,
+GitHub API, which is great, especially for my case. Open Exchange
+Rates is an API that allows you to get prices between different
+currencies. Ziptastic allows you to get city and state information
+from zip codes. GetFavicon allows you to get the Favicon and many
+others.
+
+[8:08] The most notable exceptions are Twitter. Come on. I know
+there are many of you here...
+
+_[laughter]_
+
+[8:16] ...and Flickr. There's actually a feature request on Twitter
+for a long time. They're kind of not saying exactly now, but it's
+going to happen at some point. We don't know when that point is
+going to be. I'm really looking forward to that.
+
+[8:29] It's actually up to you as well. If you request CORS support
+from Twitter, they will have to support it eventually if lots of
+you request it.
+
+I don't think I really need to explain the benefits that CORS have
+over JSONP. It's way more powerful. It basically allows you to do
+all the range of different HTTP requests. JSONP is just a hack that
+basically only allows GET requests. With CORS, you can do any kind
+of request, POST request, PUT request. You can send different HTTP
+headers, read HTTP headers. It has much better [indecipherable 09:
+[8:41] 07] handling, basically anything you can do with
+XMLHTTPRequest.
+
+[9:13] An interesting fact that I discovered when I launched
+Dabblet was that what for me was something that I did to avoid
+having a service side component that I had to pay for. People
+actually loved that. They thought it was a feature. They thought I
+did it because GitHub integration is something that people would
+enjoy.
+
+[9:36] It turns out that people trust third party APIs more than a
+random newcomer application that needs to build user trust first,
+because they know that if at some point I decide to take Dabblet
+down they won't lose their data. It will still be at GitHub and
+they trust GitHub way more.
+
+[9:55] Another benefit was that it's very easy to add new features
+because the back end is already there. For example, if I want to
+add comments, I just need to utilize the API for comments. Even now
+that the Dabblet interface doesn't support comments yet, people can
+just go to the gist and comment there. It gives them a bunch of
+features that I didn't even have to implement. Like they want to
+use a Git repository unit, they can do it because every gist is
+basically a small Git repository.
+
+[10:29] Some of you might think that this is leaching. But
+actually, that's what APIs are for. I'm not using it in any way
+that's against the terms or anything. It's good for them. It's good
+for me. Win win.
+
+[10:44] So can clients get too fat? Other cases where you should
+use your server. A good example of this -- and yes, they can get
+too fat -- is mobile. In mobile, the more JavaScript you have, the
+more you drain the battery. If your application has lots of mobile
+users, maybe you should consider doing more stuff on the server if
+you can afford it.
+
+Another case is things that really need to be centralized. For
+example, when Twitter launched their new interface, every time you
+used a different client, you had to mark your [indecipherable 11:
+[11:09] 20] messages as read again, because they, it seems that the
+read state is stored on the client side. That's not really, that's
+not good. It pisses off so many people.
+
+[11:34] The answer is no, you shouldn't necessarily client side all
+the things. You should examine it on a case by case basis.
+
+[11:43] That's about it. Thank you.
+
+_[applause]_
