@@ -8,5 +8,3 @@ Like many developers, you might be familiar with the power of regular expression
 
 Follow along with Lea's http://leaverou.github.io/regexplained/[RegEx Playground].
 ****
-
-<iframe width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
