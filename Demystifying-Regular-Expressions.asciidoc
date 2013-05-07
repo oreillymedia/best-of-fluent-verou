@@ -11,8 +11,7 @@ Follow along with Lea's http://leaverou.github.io/regexplained/[RegEx Playground
 
 === Video Transcript
 
-can see my Twitter username over there. If you have any questions
-and we don't have time at the end, you can always ping me on
+[0:04] Hi there, I'm Lea Verou. It's great to be here today. You can see my Twitter username over there. If you have any questions and we don't have time at the end, you can always ping me on
 Twitter and ask me.
 
 [0:15] Regular expressions. Many people use many different names to
