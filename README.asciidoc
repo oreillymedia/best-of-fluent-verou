@@ -4,7 +4,7 @@ Lea Verou is a web designer, developer, and independent web evangelist.  She spo
 
 * <<client_side, Turning to the Client Side>>
 * <<demistifying_regex, Demystifying Regular Expressions>>
-* << interview, Live interview at the event>>
+* <<interview, Live interview at the event>>
 
 === Contributing
 
