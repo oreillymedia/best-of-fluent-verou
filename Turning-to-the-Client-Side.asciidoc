@@ -1,3 +1,4 @@
+[[client_side]]
 == Turning to the Client Side
 
 video::http://www.youtube.com/embed/0T57Ivn5-Pw[height='300', width='100%']
