@@ -1,0 +1,11 @@
+== Best of Fluent (2012): Lea Verou
+
+Lea Verou is a web designer, developer, and independent web evangelist.  She spoke at the 2012 http://fluentconf.com/fluent2012[O'Reilly Fluent conference].  This "Best Of" repository contains resources about her talks, including videos, transcripts, and links to other resources.  Her talks include:
+
+* <<client_side, Turning to the Client Side>>
+* <<demistifying_regex, Demystifying Regular Expressions>>
+* << interview, Live interview at the event>>
+
+=== Contributing
+
+If you find any errors or you'd like to contribute to this repository, fork it and send us a pull request.
